@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kontakt</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img class="logo-image" src="elephant_logo.png" alt="Logo">
+            <span class="temperature">0°C</span> <!-- Replace with JavaScript to fetch actual temperature -->
+        </div>
+        <nav class="nav">
+            <a href="live.html">Live</a>
+            <a href="meist.html">Meist</a>
+            <a href="hinnakiri.html">Hinnakiri</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <div class="content-block-1 wider-box">
+            <div class="left-part">
+                <div class="contact-info-block">
+                    <div class="text-block">
+                        <h2>Kontakt</h2>
+                        <p>Üldtelefon (tööpäeviti) +372 55391092</p>
+                        <p>E-post info@loomaaed.ee</p> <br>
+                        <p>E-N kl 9-16</p>
+                        <p>R-P kl 12-18</p>
+                    </div>
+                    <div class="text-block">
+                        <h2>Aadress</h2>
+                        <p>Tallinna Loomaaed</p>
+                        <p>Ehitajate tee 150/Paldiski mnt 145</p>
+                        <p>Tallinn 13522, Eesti Vabariik</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-part">
+                <h1>VÕTA ÜHENDUST</h1> <!-- Add this line -->
+                <form id="myForm" action="http://localhost:3001/send-email" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nimi</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-post</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Sisu</label>
+                        <textarea id="message" name="message" rows="8" cols="25" required></textarea>
+                    </div>
+
+                    <button id="submitButton" type="submit">Saada</button>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-media">
+            <a href="https://www.facebook.com/"><img class="icon" src="facebook_icon.png" alt="Facebook"></a> <!-- Replace with your actual icon and link -->
+            <a href="https://www.instagram.com/"><img class="icon" src="instagram_icon.png" alt="Instagram"></a> <!-- Replace with your actual icon and link -->
+            <a href="https://www.youtube.com/"><img class="icon" src="youtube_icon.png" alt="Twitter"></a> <!-- Replace with your actual icon and link -->
+        </div>
+        <div class="copyright">
+            Loomaaed © 2024
+        </div>
+        <div class="contact-details">
+            <div class="contact">
+                <img class="icon" src="phone_icon.png" alt="Phone">
+                <span>+372 55391092</span>
+            </div>
+            <div class="contact">
+                <img class="icon" src="email_icon.png" alt="Email">
+                <span>info@loomaaed.ee</span>
+            </div>
+            <div class="contact">
+                <img class="icon" src="map_icon.png" alt="Location">
+                <span>Ehitajate tee 150, Tallinn</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

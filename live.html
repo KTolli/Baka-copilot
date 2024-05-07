@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>live</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img class="logo-image" src="elephant_logo.png" alt="Logo">
+            <span class="temperature">0°C</span> <!-- Replace with JavaScript to fetch actual temperature -->
+        </div>
+        <nav class="nav">
+            <a href="live.html">Live</a>
+            <a href="meist.html">Meist</a>
+            <a href="hinnakiri.html">Hinnakiri</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <div class="content-block-live">
+            <div class="iframe-container">
+                <iframe id="live-broadcast" 
+                    src="https://www.youtube.com/embed/ymcXNJ5ITos?autoplay=1&controls=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <div class="iframe-overlay"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-media">
+            <a href="https://www.facebook.com/"><img class="icon" src="facebook_icon.png" alt="Facebook"></a> <!-- Replace with your actual icon and link -->
+            <a href="https://www.instagram.com/"><img class="icon" src="instagram_icon.png" alt="Instagram"></a> <!-- Replace with your actual icon and link -->
+            <a href="https://www.youtube.com/"><img class="icon" src="youtube_icon.png" alt="Twitter"></a> <!-- Replace with your actual icon and link -->
+        </div>
+        <div class="copyright">
+            Loomaaed © 2024
+        </div>
+        <div class="contact-details">
+            <div class="contact">
+                <img class="icon" src="phone_icon.png" alt="Phone">
+                <span>+372 55391092</span>
+            </div>
+            <div class="contact">
+                <img class="icon" src="email_icon.png" alt="Email">
+                <span>info@loomaaed.ee</span>
+            </div>
+            <div class="contact">
+                <img class="icon" src="map_icon.png" alt="Location">
+                <span>Ehitajate tee 150, Tallinn</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

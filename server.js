@@ -1,32 +1,37 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
+const sgMail = require('@sendgrid/mail');
 const bodyParser = require('body-parser');
 
 const app = express();
 
+// Parse URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/send-email', async (req, res) => {
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'karina.baka24@gmail.com',
-            pass: 'Bakabaka24!'
-        }
+sgMail.setApiKey('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');
+
+app.post('/send-email', (req, res) => {
+  console.log(req.body); // Log the request body
+
+  const { name, email, message } = req.body;
+
+  const msg = {
+    to: 'karina.baka24@gmail.com', // fixed recipient email
+    from: 'karina.baka24@gmail.com', // fixed sender email
+    subject: `New message from ${name} (${email})`, // include the name and email in the subject
+    text: `Saatja nimi: ${name}\nSaatja email: ${email}\nSaatja sõnum: ${message}`, // include the name, email, and message in the text
+    html: `<p>Saatja nimi: ${name}<br>Saatja email: ${email}<br>Saatja sõnum: ${message}</p>`, // include the name, email, and message in the html
+  };
+
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log('Email sent');
+      res.json({ message: 'Email sent' });
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send('Error sending email');
     });
-
-    let mailOptions = {
-        from: 'your-email@gmail.com',
-        to: 'karina.tolli@ut.ee',
-        subject: 'New Form Submission',
-        text: JSON.stringify(req.body)
-    };
-
-    let info = await transporter.sendMail(mailOptions);
-
-    res.send('Aitäh, info on saadetud');
 });
 
-app.listen(3001, () => {
-    console.log('Server is running on port 3001');
-});
+app.listen(3000, () => console.log('Server is running on port 3000'));

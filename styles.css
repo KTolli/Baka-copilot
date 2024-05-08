@@ -113,18 +113,19 @@ body {
 }
 
 .carousel {
+    margin-bottom: -30px;
     position: relative;
-    width: 600px;
-    height: 1000px;
+    width: 25%;
+    height: 100%; /* Adjust this to change the height of the carousel */
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-right: 20px; /* Add this line */
 }
 
 
 .carousel-container {
     position: relative;
-    height: 95%; /* Adjust this to change the height of the carousel */
+    height: 65vh; /* Adjust this to change the height of the carousel */
 }
 
 .carousel-image {

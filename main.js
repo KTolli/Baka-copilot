@@ -5,7 +5,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
 
-  fetch('http://localhost:3000/send-email', {
+  fetch('https://cop-meiler.vercel.app/send-email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',

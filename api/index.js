@@ -5,12 +5,12 @@ const bodyParser = require('body-parser');
 const app = express();
 
 
-
 // Parse URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
 sgMail.setApiKey('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');
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.post('/send-email', (req, res) => {
   console.log(req.body); // Log the request body
 
@@ -36,4 +36,5 @@ app.post('/send-email', (req, res) => {
     });
 });
 
-app.listen(3000, () => console.log('Server is running on port 4000'));
+app.listen(4000, () => console.log('Server is running on port 4000'));
+module.exports = app;

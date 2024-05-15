@@ -8,7 +8,8 @@ const app = express();
 // Parse URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
-sgMail.setApiKey('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');
+// APIKEY on koodist eemaldatud GitHub repositooriumi avalikustamise tõttu 
+sgMail.setApiKey('');
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 app.post('/send-email', (req, res) => {
